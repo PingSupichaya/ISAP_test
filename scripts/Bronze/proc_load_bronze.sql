@@ -1,12 +1,14 @@
 /*
 ===========================================
 Stores Procedure of loading data into tables in Bronze schema
+Script Purpose:
+	It performs:
+	- Truncates the bronze tables before loading data
+	- Uses the 'BULK INSERT' to load data from CSV files
+Usage Example:
+	exec bronze.load_bronze;
 ===========================================
 */
-
-exec bronze.load_bronze;
-go
-
 create or alter procedure bronze.load_bronze as 
 begin
 	declare @start_time datetime, @end_time datetime, @start_batch datetime, @end_batch datetime;
